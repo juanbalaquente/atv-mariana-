@@ -1,0 +1,44 @@
+<?php
+$numero = 20;
+
+if ($numero % 10 == 0) {
+    echo "$numero é divisível por 10.";
+} elseif ($numero % 5 == 0) {
+    echo "$numero é divisível por 5, mas não por 10.";
+} elseif ($numero % 2 == 0) {
+    echo "$numero é divisível por 2, mas não por 5 ou 10.";
+} else {
+    echo "$numero não é divisível por 2, 5 ou 10.";
+}
+?>
+
+
+
+<?php
+
+echo "Digite o título do livro: ";
+$tituloLivro = readline();
+
+echo "Informe o tipo de usuário (professor ou aluno): ";
+$tipoUsuario = readline();
+
+$prazoDevolucao = null;
+
+switch ($tipoUsuario) {
+    case 'professor':
+        $prazoDevolucao = 10;
+        break;
+    case 'aluno':
+        $prazoDevolucao = 3;
+        break;
+    default:
+        echo "Tipo de usuário inválido.\n";
+        exit;
+}
+
+echo "\n===== Recibo de Empréstimo =====\n";
+echo "Livro: $tituloLivro\n";
+echo "Tipo de Usuário: $tipoUsuario\n";
+echo "Prazo de Devolução: $prazoDevolucao dias\n";
+echo "================================\n";
+?>
